@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title> {{ title }} </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+</head>
+
+<body>
+    <h1> Hello Flask </h1>
+    <h2 id="h2_test"> Desc. </h2>
+    <div>
+        <ul>
+            {% for i in array %}
+            <li>{{ i }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <p>{{"title: %s, desc: %s" %(json["title"], json["desc"])}}</p>
+    </div>
+
+    <div>
+        <form action="/test" method="get">
+            <button name="get_value" value="GetValue">GET submit</button>
+        </form>
+
+        <form action="/test" method="post">
+            <button name="post_value" value="PostValue">POST submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
